@@ -1,0 +1,21 @@
+<script>
+/* 2.2.3 URIComponent : 서버가 한글 주소를 이해하지 못할 때 사용 */
+var formData=new Formdata();
+    formData.append('name', 'zerocho');
+    formData.append('birth', '1994');
+    xhr.onreadystatechange=function()
+    {
+        if(xhr.readyState===xhr.DONE){
+            if(xhr.status===200||xhr.status===201)
+            {
+                console.log(xhr.responseText);
+            }
+            else{
+                console.error(xhr.responseText);
+            }
+        }
+    };
+    xhr.open('GET', 'https://www.zerocho.com/api/search/'+encodeURIComponent('노드')); 
+    //받는 쪽에서는 decodeURIComponent('%fjDSFK') // -> 노드
+    xhr.send();
+</script>
