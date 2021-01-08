@@ -3,7 +3,7 @@ setInterval(()=>{
     if(i===5)
     {
         console.log('종료!');
-        process.exit();
+        process.exit(); //exit(1)은 비정상 종료
     }
     console.log(i);
     i+=1;
